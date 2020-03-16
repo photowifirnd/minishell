@@ -9,6 +9,8 @@ typedef struct	s_command
 {
 	char	*command;
 	char	**args;
+	int		i;
+	int		echo_flag;
 }		t_command;
 typedef struct	s_builtcmd
 {
@@ -20,21 +22,22 @@ typedef struct	s_env
 		char *pwd;
 }		t_env;
 
-void		ft_echo(const char *fstr);
+int			ft_echo(char *line, t_command *cmd);
 void		ft_cd(const char *fstr);
-int		ft_pwd(void);
+int			ft_pwd(void);
 void		ft_export(const char *fstr);
 void		ft_unset(const char *fstr);
 void		ft_env(const char *fstr);
-int		ft_exit(t_command *cmd);
+int			ft_exit(t_command *cmd);
 void		ft_setpwd(t_env *env);
-int		ft_gnl(char **line);
+int			ft_gnl(char **line);
 void		ft_get_args(char *line, t_command *cmd);
-int		ft_exec_command(t_command *cmd);
+int			ft_exec_command(t_command *cmd, char *line);
 size_t		ft_strlen(const char *str);
 char		*ft_strdup(const char *str);
 char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strchr(char *str, char c);
 char		*ft_strsub(const char *str, unsigned int start, size_t len);
-int		ft_strcmp(const char *s1, const char *s2);
+int			ft_strcmp(const char *s1, const char *s2);
+char		**ft_split(char const *s, char c);
 #endif
