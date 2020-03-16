@@ -5,14 +5,14 @@ void	init_shell()
 	int	status;
 	char	*line;
 	char	*args;
-//	t_command	*cmd;
+	t_command	cmd;
 
 	status = 1;
 	while (status)
 	{
 		write(1, "$>", 2);
 		ft_gnl(&line);
-		ft_get_args(line, &args);
+		ft_get_args(line, &cmd);
 //		status = ft_exec_command(args);		
 	}
 }

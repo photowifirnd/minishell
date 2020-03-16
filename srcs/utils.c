@@ -66,3 +66,35 @@ char	*ft_strchr(char *str, char c)
 	}
 	return (NULL);
 }
+
+char	*ft_strsub(const char *str, unsigned int start, size_t len)
+{
+	size_t	i;
+	char	*tmp;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	if (!(tmp = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	while (len-- > 0 && str[i] != '\0')
+		tmp[i++] = str[start++];
+	tmp[i] = '\0';
+	return (tmp);
+}
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+	int	ret;
+
+	i = 0;
+	ret = 0;
+	while (s1[i] != '\0' || s2[i] !='\0')
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (ret);
+}
