@@ -4,7 +4,7 @@ void	init_shell(t_env *env)
 {
 	int	status;
 	char	*line;
-	char	*args;
+	//char	*args;
 	t_command	cmd;
 
 	status = 1;
@@ -14,7 +14,8 @@ void	init_shell(t_env *env)
 		write(1, "$>", 2);
 		ft_gnl(&line);
 		ft_get_args(line, &cmd);
-		status = ft_exec_command(&cmd);		
+		status = ft_exec_command(&cmd);
+		free (line);
 	}
 }
 
@@ -26,5 +27,7 @@ int	main(int args, char **argsv)
 
 	ft_setpwd(&env);
 	init_shell(&env);
+	free (env.pwd);
+	system("leaks minishell");
 	return (0);
 }
