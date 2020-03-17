@@ -1,6 +1,6 @@
 #include "../includes/minishell.h"
 
-void	init_shell()
+void	init_shell(t_env *env)
 {
 	int	status;
 	char	*line;
@@ -10,10 +10,11 @@ void	init_shell()
 	status = 1;
 	while (status)
 	{
+		write(1, env->pwd, ft_strlen(env->pwd));
 		write(1, "$>", 2);
 		ft_gnl(&line);
 		ft_get_args(line, &cmd);
-//		status = ft_exec_command(args);		
+		status = ft_exec_command(&cmd);		
 	}
 }
 
@@ -21,6 +22,9 @@ int	main(int args, char **argsv)
 {
 	(void)args;
 	(void)argsv;
-	init_shell();
+	t_env		env;
+
+	ft_setpwd(&env);
+	init_shell(&env);
 	return (0);
 }

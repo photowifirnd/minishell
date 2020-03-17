@@ -1,7 +1,8 @@
 SPATH	=	./srcs/
 HPATH	=	./includes/
 SRCS	=	$(SPATH)main.c $(SPATH)ft_gnl.c $(SPATH)ft_getargs.c \
-		$(SPATH)utils.c
+		$(SPATH)utils.c $(SPATH)ft_exit.c $(SPATH)ft_exec_command.c \
+		$(SPATH)ft_pwd.c $(SPATH)ft_setpwd.c
 
 CC	=	gcc
 CFLAG	=	-Wall -Werror -Wextra
