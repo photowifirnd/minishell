@@ -8,6 +8,11 @@ int ft_echo(char *line, t_command *cmd)
     cmd->args = ft_split(&line[cmd->i], ' ');
     i = 0;
     cmd->echo_flag = 0;
+    if (!cmd->args[0])
+    {
+	    free(cmd->args);
+	    return (1);
+    }
     if (!(ft_strcmp(cmd->args[0], "-n")))
     {
         cmd->echo_flag = 1;
@@ -30,5 +35,5 @@ int ft_echo(char *line, t_command *cmd)
     free(cmd->args);
     if (!cmd->echo_flag)
         write(1, "\n", 1);
-    return (0);
+    return (1);
 }

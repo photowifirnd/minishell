@@ -15,7 +15,7 @@ void	init_shell(t_env *env)
 		write(1, "$>", 2);
 		ft_gnl(0, &line);
 		ft_get_args(line, &cmd);
-		status = ft_exec_command(&cmd, NULL);
+		status = ft_exec_command(&cmd, line);
 		free (line);
 	}
 }
