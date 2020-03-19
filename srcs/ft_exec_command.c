@@ -11,8 +11,10 @@ int	ft_exec_command(t_command *cmd, char *line)
 		ret = (ft_exit(cmd));
 	else if (!ft_strcmp(cmd->command, "pwd"))
 		ret = (ft_pwd());
+	else if (!ft_strcmp(cmd->command, "env"))
+		ret = (ft_getenv(cmd->list));
 	else if (!ft_strcmp(cmd->command, "echo"))
-		ret = (!ft_echo(line, cmd));
+		ret = (ft_echo(line, cmd));
 	free (cmd->command);
 	return (ret);
 }

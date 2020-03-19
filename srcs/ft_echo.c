@@ -1,6 +1,4 @@
 #include "../includes/minishell.h"
-#include <stdio.h>
-
 
 int ft_echo(char *line, t_command *cmd)
 {

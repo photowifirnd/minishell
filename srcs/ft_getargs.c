@@ -38,7 +38,7 @@ char	*ft_parse_cmd(char *cmd, t_command *cmd_index)
 		len++;
 	}*/
 	tmp = ft_strsub(cmd, start, len); //Ojo, al llamar a ft_strsub se hace un malloc que debe ser liberado. Si hay un error devolvera un NULL que se podrá liberar. No debe liberarse aquí. Seguir la funcion que llama para liberar
-
+	
 	cmd_index->i = i;
 
 	return (tmp);	

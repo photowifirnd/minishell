@@ -2,7 +2,8 @@ SPATH	=	./srcs/
 HPATH	=	./includes/
 SRCS	=	$(SPATH)main.c $(SPATH)ft_gnl.c $(SPATH)ft_getargs.c \
 		$(SPATH)utils.c $(SPATH)ft_exit.c $(SPATH)ft_exec_command.c \
-		$(SPATH)ft_pwd.c $(SPATH)ft_setpwd.c $(SPATH)ft_echo.c
+		$(SPATH)ft_pwd.c $(SPATH)ft_setpwd.c $(SPATH)ft_lists.c \
+		$(SPATH)ft_setenv.c $(SPATH)ft_echo.c
 
 CC	=	gcc
 CFLAG	=	-Wall -Werror -Wextra
@@ -20,7 +21,7 @@ $(LIB):		$(OBJS)
 		$(CC) $(CFLAG) -L. -l shell -o $(NAME)
 
 clean:
-		rm -rf $(LIB) $(OBJS)
+		rm -rf $(LIB)
 
 fclean:
 		rm -rf $(NAME) $(LIB) $(OBJS)

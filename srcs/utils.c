@@ -99,7 +99,32 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (ret);
 }
 
-/*TENGO QUE METER AQUI EL ft_split*/
+char	*ft_strcpy(char *dest, const char *src)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
+	}
+	return (dest);
+}
 
 static size_t	word_len(char const *s, char c)
 {

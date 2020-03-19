@@ -7,14 +7,15 @@ void	init_shell(t_env *env)
 	//char	*args;
 	t_command	cmd;
 
+	cmd.list = env->list;
 	status = 1;
 	while (status)
 	{
 		write(1, env->pwd, ft_strlen(env->pwd));
 		write(1, "$>", 2);
-		ft_gnl(&line);
+		ft_gnl(0, &line);
 		ft_get_args(line, &cmd);
-		status = ft_exec_command(&cmd, line);
+		status = ft_exec_command(&cmd, NULL);
 		free (line);
 	}
 }
@@ -26,9 +27,10 @@ int	main(int args, char **argsv)
 	t_env		env;
 
 	ft_setpwd(&env);
+	if (ft_setenv(&env) < 0)
+		printf("Error asignando variables de entorno\n");//establece las variables de entorno en listas enlazadas dinamicas.
 	init_shell(&env);
 	free (env.pwd);
-	write(1, "\n\n", 2);
 	system("leaks minishell");
 	return (0);
 }
