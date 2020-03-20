@@ -3,7 +3,8 @@ HPATH	=	./includes/
 SRCS	=	$(SPATH)main.c $(SPATH)ft_gnl.c $(SPATH)ft_getargs.c \
 		$(SPATH)utils.c $(SPATH)ft_exit.c $(SPATH)ft_exec_command.c \
 		$(SPATH)ft_pwd.c $(SPATH)ft_setpwd.c $(SPATH)ft_lists.c \
-		$(SPATH)ft_setenv.c $(SPATH)ft_echo.c
+		$(SPATH)ft_setenv.c $(SPATH)ft_echo.c $(SPATH)ft_export.c \
+		$(SPATH)ft_parse_quotes.c
 
 CC	=	gcc
 CFLAG	=	-Wall -Werror -Wextra

@@ -7,14 +7,7 @@ t_list	*ft_lstnew(void *content)
 	if (!(list = (t_list *)malloc(sizeof(*list))))
 		return (NULL);
 	else
-	{
-/*		if (!(list->content = malloc(ft_strlen(content) + 1)))
-		{
-			free(list);
-			return (NULL);
-		}*/
 		list->content = ft_strdup(content);
-	}
 	list->next = NULL;
 	return (list);
 }

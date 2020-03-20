@@ -24,7 +24,6 @@ int	ft_setenv(t_env *env)
 		free(line);
 	}
 	free (line);
-	ft_getenv(env->list);
 	return (1);
 }
 
@@ -34,7 +33,8 @@ int	ft_getenv(t_list *lst)
 		return (2);
 	while (lst)
 	{
-		printf("%s\n", lst->content);
+		write(1, lst->content, ft_strlen(lst->content));
+		write(1, "\n", 1);
 		lst = lst->next;
 	}
 	return (1);

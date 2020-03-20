@@ -15,6 +15,8 @@ int	ft_exec_command(t_command *cmd, char *line)
 		ret = (ft_getenv(cmd->list));
 	else if (!ft_strcmp(cmd->command, "echo"))
 		ret = (ft_echo(line, cmd));
+	else if (!ft_strcmp(cmd->command, "export"))
+		ret = (ft_export(cmd, line));
 	free (cmd->command);
 	return (ret);
 }

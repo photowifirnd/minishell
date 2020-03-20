@@ -57,7 +57,7 @@ int			ft_setenv(t_env *env);
 int			ft_echo(char *line, t_command *cmd);
 void			ft_cd(const char *fstr);
 int			ft_pwd(void);
-void			ft_export(const char *fstr);
+int			ft_export(t_command *cmd, char *line);
 void			ft_unset(const char *fstr);
 void			ft_env(const char *fstr);
 int			ft_exit(t_command *cmd);
@@ -74,4 +74,6 @@ int			ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dest, const char *src);
 void			*ft_memcpy(void *dest, const void *src, size_t len);
 char			**ft_split(char const *s, char c);
+size_t			ft_get_quotes(char *line, char c);
+void			ft_settemp(char **buffer, char *line, int fr);
 #endif
